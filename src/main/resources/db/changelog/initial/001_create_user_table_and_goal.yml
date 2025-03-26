@@ -49,13 +49,18 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
+                  name: weight
+                  type: double
+                  constraints:
+                    nullable: false
+              - column:
                   name: email
                   type: varchar(65)
                   constraints:
                     unique: true
                     nullable: false
               - column:
-                  name: daily_allowance
+                  name: goal_type_id
                   type: long
                   constraints:
                     foreignKeyName: fk_goal_type_id

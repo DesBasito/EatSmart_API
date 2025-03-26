@@ -66,17 +66,20 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
-                  name: name
-                  type: text
-                  constraints:
-                    nullable: false
-              - column:
                   name: meal_time
                   type: long
                   constraints:
                     nullable: false
                     foreignKeyName: fk_meal_type_id
                     references: meal_type(id)
+                    deleteCascade: true
+              - column:
+                  name: User_id
+                  type: long
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_user_id
+                    references: users(id)
                     deleteCascade: true
               - column:
                   name: date

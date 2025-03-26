@@ -38,11 +38,19 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: total_calories
-                  type: double
+                  type: float
                   constraints:
                     nullable: false
               - column:
-                  name: daily_allowance
-                  type: float
+                  name: date
+                  type: date
                   constraints:
+                    nullable: false
+              - column:
+                  name: user_id
+                  type: long
+                  constraints:
+                    foreignKeyName: fk_user_daily_id
+                    references: users(id)
+                    deleteCascade: true
                     nullable: false
