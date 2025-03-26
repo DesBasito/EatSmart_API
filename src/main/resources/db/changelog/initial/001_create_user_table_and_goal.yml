@@ -1,0 +1,64 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-goal-table
+      author: Abu
+      changes:
+        - createTable:
+            tableName: goal_type
+            columns:
+              - column:
+                  name: id
+                  type: long
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(65)
+                  constraints:
+                    nullable: false
+
+  - changeSet:
+      id: create-users-table
+      author: Abu
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: long
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(65)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: age
+                  type: integer
+                  constraints:
+                    nullable: false
+              - column:
+                  name: height
+                  type: double
+                  constraints:
+                    nullable: false
+              - column:
+                  name: email
+                  type: varchar(65)
+                  constraints:
+                    unique: true
+                    nullable: false
+              - column:
+                  name: daily_allowance
+                  type: long
+                  constraints:
+                    foreignKeyName: fk_goal_type_id
+                    references: goal_type(id)
+                    nullable: false
+                    deleteCascade: true

@@ -1,0 +1,48 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-meal_dishes-table
+      author: Abu
+      changes:
+        - createTable:
+            tableName: meal_dishes
+            columns:
+              - column:
+                  name: meal_id
+                  type: long
+                  constraints:
+                    foreignKeyName: fk_meal_id
+                    references: meals(id)
+                    nullable: false
+                    deleteCascade: true
+              - column:
+                  name: dishes_id
+                  type: Long
+                  constraints:
+                    foreignKeyName: fk_dishes_id
+                    references: dishes(id)
+                    nullable: false
+                    deleteCascade: true
+  - changeSet:
+      id: create-reports-table
+      author: Abu
+      changes:
+        - createTable:
+            tableName: reports
+            columns:
+              - column:
+                  name: id
+                  type: long
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: total_calories
+                  type: double
+                  constraints:
+                    nullable: false
+              - column:
+                  name: daily_allowance
+                  type: float
+                  constraints:
+                    nullable: false
