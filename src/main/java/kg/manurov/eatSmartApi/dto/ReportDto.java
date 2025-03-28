@@ -7,5 +7,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 
-public record ReportDto(Long id, @NotNull Double totalCalories, @NotNull LocalDate date, @NotBlank String username) implements Serializable {
+public record ReportDto(@NotNull Double totalCalories,
+                        @NotNull LocalDate date,
+                        @NotBlank String username){
 }

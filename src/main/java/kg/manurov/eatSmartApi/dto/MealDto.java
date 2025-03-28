@@ -7,8 +7,9 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 
-/**
- * DTO for {@link kg.manurov.eatSmartApi.models.Meal}
- */
-public record MealDto(Long id, @NotBlank LocalDate date, @NotBlank String mealType, @NotNull List<DishDto> dishes) implements Serializable {
+
+public record MealDto(Long id,
+                      @NotBlank LocalDate date,
+                      @NotBlank String mealType,
+                      @NotNull List<DishDto> dishes) implements Serializable {
 }

@@ -5,10 +5,15 @@ spring:
   application:
     name: EatSmart API
   datasource:
-    url: jdbc:h2:./db/eat_smart;AUTO_SERVER=true
-    username: root
-    password: troot
-    driver-class-name: org.h2.Driver
+    url: jdbc:postgresql://localhost:1111/postgres
+    username: qwe
+    password: qwe
+    driver-class-name: org.postgresql.Driver
   liquibase:
     change-log: classpath:db/changelog/master.yml
-
+  h2:
+    console:
+      enabled: false
+  jpa:
+    hibernate:
+      ddl-auto: validate

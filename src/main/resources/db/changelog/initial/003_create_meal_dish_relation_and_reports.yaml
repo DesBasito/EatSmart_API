@@ -8,7 +8,7 @@ databaseChangeLog:
             columns:
               - column:
                   name: meal_id
-                  type: long
+                  type: bigserial
                   constraints:
                     foreignKeyName: fk_meal_id
                     references: meals(id)
@@ -16,7 +16,7 @@ databaseChangeLog:
                     deleteCascade: true
               - column:
                   name: dishes_id
-                  type: Long
+                  type: bigserial
                   constraints:
                     foreignKeyName: fk_dishes_id
                     references: dishes(id)
@@ -31,14 +31,14 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  type: long
+                  type: bigserial
                   autoIncrement: true
                   constraints:
                     primaryKey: true
                     nullable: false
               - column:
                   name: total_calories
-                  type: float
+                  type: double
                   constraints:
                     nullable: false
               - column:
@@ -48,7 +48,7 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: user_id
-                  type: long
+                  type: bigserial
                   constraints:
                     foreignKeyName: fk_user_daily_id
                     references: users(id)
