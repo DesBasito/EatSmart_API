@@ -1,8 +1,6 @@
 package kg.manurov.eatsmartapi.models;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
 import lombok.*;
 
 import java.util.Set;
@@ -20,12 +18,10 @@ public class Dish {
     @Column(name = "ID", nullable = false)
     private Long id;
 
-    @Size(max = 255)
-    @NotNull
+
     @Column(name = "NAME", nullable = false)
     private String name;
 
-    @NotNull
     @Column(name = "CALORIES", nullable = false)
     private Double calories;
 

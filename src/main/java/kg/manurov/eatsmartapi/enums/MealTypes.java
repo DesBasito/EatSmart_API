@@ -1,4 +1,4 @@
-package kg.manurov.eatsmartapi.services.enums;
+package kg.manurov.eatsmartapi.enums;
 
 public enum MealTypes {
     BREAKFAST("завтрак"),
@@ -16,12 +16,19 @@ public enum MealTypes {
         return description;
     }
 
-    public static MealTypes fromString(String value) {
+    public static MealTypes fromString(String gender) {
+        try {
+            return MealTypes.valueOf(gender.toUpperCase());
+        } catch (IllegalArgumentException e) {
+            return null;
+        }
+    }
+    public static Boolean checkIsMealType(String value) {
         for (MealTypes type : MealTypes.values()) {
             if (type.description.equalsIgnoreCase(value)) {
-                return type;
+                return true;
             }
         }
-        throw new IllegalArgumentException("Неизвестное значение цели: " + value);
+        return false;
     }
 }

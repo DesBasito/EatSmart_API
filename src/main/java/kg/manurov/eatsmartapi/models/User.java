@@ -1,51 +1,54 @@
 package kg.manurov.eatsmartapi.models;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
-import lombok.*;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
+import kg.manurov.eatsmartapi.enums.ActivityLevel;
+import kg.manurov.eatsmartapi.enums.Gender;
+import kg.manurov.eatsmartapi.enums.GoalType;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Getter
 @Setter
 @Entity
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
-@Table(name = "USERS")
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID", nullable = false)
+    @Column(name = "id", nullable = false)
     private Long id;
 
-    @Size(max = 65)
-    @NotNull
-    @Column(name = "NAME", nullable = false, length = 65)
+    @Column(name = "name", nullable = false, length = 65)
     private String name;
 
-    @NotNull
-    @Column(name = "AGE", nullable = false)
+    @Column(name = "age", nullable = false)
     private Integer age;
 
-    @NotNull
-    @Column(name = "HEIGHT", nullable = false)
+    @Column(name = "height", nullable = false)
     private Double height;
 
-    @NotNull
-    @Column(name = "WEIGHT", nullable = false)
+    @Column(name = "weight", nullable = false)
     private Double weight;
 
-    @Size(max = 65)
-    @NotNull
-    @Column(name = "EMAIL", nullable = false, length = 65)
+    @Column(name = "gender")
+    private String gender;
+
+    @Column(name = "activity_level")
+    private String activityLevel;
+
+    @Column(name = "goal_type")
+    private String goalType;
+
+    @Column(name = "email")
     private String email;
 
-    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JoinColumn(name = "GOAL_TYPE_ID", nullable = false)
-    private GoalType goalType;
+    @OneToMany(mappedBy = "user")
+    private Set<Meal> meals = new LinkedHashSet<>();
+
+    @OneToMany(mappedBy = "user")
+    private Set<Report> reports = new LinkedHashSet<>();
+
 
 }

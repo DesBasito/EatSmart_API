@@ -1,7 +1,6 @@
 package kg.manurov.eatsmartapi.models;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
@@ -21,15 +20,12 @@ public class Report {
     @Column(name = "ID", nullable = false)
     private Long id;
 
-    @NotNull
     @Column(name = "TOTAL_CALORIES", nullable = false)
     private Double totalCalories;
 
-    @NotNull
     @Column(name = "DATE", nullable = false)
     private LocalDate date;
 
-    @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "USER_ID", nullable = false, referencedColumnName = "ID")

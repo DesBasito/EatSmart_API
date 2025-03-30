@@ -1,7 +1,10 @@
-package kg.manurov.eatsmartapi.exceptions.handler;
+package kg.manurov.eatsmartapi.exception;
 
+import kg.manurov.eatsmartapi.services.interfaces.ErrorService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.ErrorResponse;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -12,6 +15,8 @@ import java.util.NoSuchElementException;
 @RestControllerAdvice
 @Slf4j
 public class GlobalExceptionHandler {
+    @Autowired
+    private ErrorService errorService;
     @ExceptionHandler(NoSuchElementException.class)
     public ErrorResponse noSuchElementException(NoSuchElementException e){
         log.error(e.getMessage());
@@ -25,9 +30,9 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ErrorResponse validationHandler(MethodArgumentNotValidException ex){
+    public ResponseEntity<ErrorResponseBody> validationHandler(MethodArgumentNotValidException ex){
         log.error(ex.getMessage());
-        return ErrorResponse.builder(ex,HttpStatus.BAD_REQUEST,ex.getMessage()).build();
+        return new ResponseEntity<>(errorService.makeResponse(ex.getBindingResult()),HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(IllegalArgumentException.class)

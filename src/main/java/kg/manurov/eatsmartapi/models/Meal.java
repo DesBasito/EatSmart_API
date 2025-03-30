@@ -1,37 +1,41 @@
 package kg.manurov.eatsmartapi.models;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
-import lombok.*;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import kg.manurov.eatsmartapi.enums.MealTypes;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Getter
 @Setter
 @Entity
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
-@Table(name = "MEALS")
+@Table(name = "meals")
 public class Meal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID", nullable = false)
+    @Column(name = "id", nullable = false)
     private Long id;
 
-    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JoinColumn(name = "MEAL_TIME", nullable = false)
-    private MealType mealTime;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
 
-    @NotNull
-    @Column(name = "DATE", nullable = false)
+    @Column(name = "date", nullable = false)
     private LocalDate date;
 
-    @ManyToMany(mappedBy = "meals")
-    private Set<Dish> dishes;
+    @Column(name = "meal_type")
+    private String mealTypes;
+
+    @ManyToMany
+    @JoinTable(name = "meal_dishes",
+            joinColumns = @JoinColumn(name = "meal_id"),
+            inverseJoinColumns = @JoinColumn(name = "dishes_id"))
+    private Set<Dish> dishes = new LinkedHashSet<>();
+
 }

@@ -1,18 +1,14 @@
 --liquibase formatted sql
 --changeset Abu:add_initial_data
 
-insert into GOAL_TYPE(name)
-values ('похудение'),('набор массы'),('поддержание');
+-- Добавляем пользователей с ENUM goal_type
+INSERT INTO USERS(name, age, height, weight, email, gender, activity_level, goal_type)
+VALUES
+    ('John Doe', 21, 175.3, 55, 'john.doe@example.com', 'MALE', 'MODERATE', 'GAIN_MUSCLE'),
+    ('Jane Doe', 19, 164.3, 76, 'jane.doe@example.com', 'FEMALE', 'LIGHT', 'LOSE_WEIGHT'),
+    ('Jacob Doe', 21, 175.3, 76, 'jacob.doe@example.com', 'MALE', 'ACTIVE', 'MAINTAIN');
 
-INSERT INTO USERS(name, age, height, weight, email, goal_type_id)
-VALUES ('John Doe', 21, 175.3, 55, 'john.doe@example.com', (select id from GOAL_TYPE where NAME like 'набор массы')),
-       ('Jane Doe', 19, 164.3, 76, 'jane.doe@example.com', (select id from GOAL_TYPE where NAME like 'похудение')),
-       ('Jacob Doe', 21, 175.3, 76, 'jacob.doe@example.com', (select id from GOAL_TYPE where NAME like 'поддержание'));
-
-
-INSERT INTO MEAL_TYPE (NAME)
-VALUES ('Завтрак'), ('Обед'), ('Ужин'), ('Перекус');
-
+-- Добавляем блюда
 INSERT INTO DISHES (name, calories, protein, fats, carbohydrates)
 VALUES
     ('Овсянка с бананом', 350, 10, 5, 60),
@@ -22,12 +18,14 @@ VALUES
     ('Омлет с сыром', 400, 25, 20, 30),
     ('Йогурт натуральный', 150, 10, 5, 15);
 
-INSERT INTO MEALS (meal_time, USER_ID, date)
+-- Добавляем приемы пищи с ENUM meal_type
+INSERT INTO MEALS (meal_type, USER_ID, date)
 VALUES
-    ((SELECT id FROM MEAL_TYPE WHERE NAME = 'Завтрак'), (SELECT id FROM USERS WHERE email = 'john.doe@example.com'), '2025-03-27'),
-    ((SELECT id FROM MEAL_TYPE WHERE NAME = 'Обед'), (SELECT id FROM USERS WHERE email = 'jane.doe@example.com'), '2025-03-27'),
-    ((SELECT id FROM MEAL_TYPE WHERE NAME = 'Ужин'), (SELECT id FROM USERS WHERE email = 'jacob.doe@example.com'), '2025-03-27');
+    ('BREAKFAST', (SELECT id FROM USERS WHERE email = 'john.doe@example.com'), '2025-03-27'),
+    ('LUNCH', (SELECT id FROM USERS WHERE email = 'jane.doe@example.com'), '2025-03-27'),
+    ('DINNER', (SELECT id FROM USERS WHERE email = 'jacob.doe@example.com'), '2025-03-27');
 
+-- Добавляем связи блюд с приемами пищи
 INSERT INTO MEAL_DISHES (MEAL_ID, DISHES_ID)
 VALUES
     ((SELECT id FROM MEALS WHERE USER_ID = (SELECT id FROM USERS WHERE email = 'john.doe@example.com') AND date = '2025-03-27'),
@@ -39,9 +37,9 @@ VALUES
     ((SELECT id FROM MEALS WHERE USER_ID = (SELECT id FROM USERS WHERE email = 'jacob.doe@example.com') AND date = '2025-03-27'),
      (SELECT id FROM DISHES WHERE name = 'Суп гороховый'));
 
+-- Добавляем отчеты
 INSERT INTO REPORTS (TOTAL_CALORIES, DATE, USER_ID)
 VALUES
     (350, '2025-03-27', (SELECT id FROM USERS WHERE email = 'john.doe@example.com')),
     (450, '2025-03-27', (SELECT id FROM USERS WHERE email = 'jane.doe@example.com')),
     (250, '2025-03-27', (SELECT id FROM USERS WHERE email = 'jacob.doe@example.com'));
-

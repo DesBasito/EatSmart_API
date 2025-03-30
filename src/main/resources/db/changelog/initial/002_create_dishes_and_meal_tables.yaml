@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
-      id: create-meal-type-enum
+      id: create-dishes-table
       author: Abu
       changes:
         - createTable:
-            tableName: meal_type
+            tableName: dishes
             columns:
               - column:
                   name: id
@@ -15,42 +15,24 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: name
-                  type: varchar(65)
+                  type: varchar(255)
                   constraints:
                     nullable: false
-  - changeSet:
-        id: create-dishes-table
-        author: Abu
-        changes:
-          - createTable:
-              tableName: dishes
-              columns:
-                - column:
-                    name: id
-                    type: bigserial
-                    autoIncrement: true
-                    constraints:
-                      primaryKey: true
-                      nullable: false
-                - column:
-                    name: name
-                    type: varchar(255)
-                    constraints:
-                      nullable: false
-                - column:
-                    name: calories
-                    type: double
-                    constraints:
-                      nullable: false
-                - column:
-                    name: protein
-                    type: double
-                - column:
-                    name: fats
-                    type: float
-                - column:
-                    name: carbohydrates
-                    type: double
+              - column:
+                  name: calories
+                  type: double
+                  constraints:
+                    nullable: false
+              - column:
+                  name: protein
+                  type: double
+              - column:
+                  name: fats
+                  type: float
+              - column:
+                  name: carbohydrates
+                  type: double
+
   - changeSet:
       id: create-meal-table
       author: Abu
@@ -66,13 +48,10 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
-                  name: meal_time
-                  type: bigserial
+                  name: meal_type
+                  type: varchar(65)
                   constraints:
                     nullable: false
-                    foreignKeyName: fk_meal_type_id
-                    references: meal_type(id)
-                    deleteCascade: true
               - column:
                   name: user_id
                   type: bigserial
@@ -86,4 +65,3 @@ databaseChangeLog:
                   type: date
                   constraints:
                     nullable: false
-

@@ -1,26 +1,5 @@
 databaseChangeLog:
   - changeSet:
-      id: create-goal-table
-      author: Abu
-      changes:
-        - createTable:
-            tableName: goal_type
-            columns:
-              - column:
-                  name: id
-                  type: bigserial
-                  autoIncrement: true
-                  constraints:
-                    primaryKey: true
-                    nullable: false
-              - column:
-                  name: name
-                  type: varchar(65)
-                  constraints:
-                    nullable: false
-                    unique: true
-
-  - changeSet:
       id: create-users-table
       author: Abu
       changes:
@@ -61,10 +40,17 @@ databaseChangeLog:
                     unique: true
                     nullable: false
               - column:
-                  name: goal_type_id
-                  type: bigserial
+                  name: gender
+                  type: varchar(65)
                   constraints:
-                    foreignKeyName: fk_goal_type_id
-                    references: goal_type(id)
                     nullable: false
-                    deleteCascade: true
+              - column:
+                  name: activity_level
+                  type: varchar(65)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: goal_type
+                  type: varchar(65)
+                  constraints:
+                    nullable: false

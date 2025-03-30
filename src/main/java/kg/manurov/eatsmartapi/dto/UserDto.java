@@ -1,12 +1,17 @@
 package kg.manurov.eatsmartapi.dto;
 
 import jakarta.validation.constraints.*;
+import kg.manurov.eatsmartapi.dto.annotations.ValidUserDto;
 
+@ValidUserDto
 public record UserDto(Long id,
                       @NotBlank @Size(max = 65) String name,
                       @NotNull @PositiveOrZero(message = "Введите правильный возраст") Integer age,
                       @NotNull @Min(value = 40, message = "Введите правильный рост") Double height,
                       @NotNull @Min(value = 40, message = "Введите правильный рост") Double weight,
-                      @NotBlank @Email @Size(max = 65) String email,
-                      @NotBlank String goal){
+                      @NotBlank @Email  @Size(max = 65) String email,
+                      @NotBlank String goal,
+                      @NotBlank String activityLevel,
+                      @NotBlank String gender
+){
 }
