@@ -9,7 +9,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -30,12 +32,11 @@ public class Meal {
     private LocalDate date;
 
     @Column(name = "meal_type")
-    private String mealTypes;
+    private String mealType;
 
     @ManyToMany
     @JoinTable(name = "meal_dishes",
             joinColumns = @JoinColumn(name = "meal_id"),
             inverseJoinColumns = @JoinColumn(name = "dishes_id"))
-    private Set<Dish> dishes = new LinkedHashSet<>();
-
+    private List<Dish> dishes = new ArrayList<>();
 }

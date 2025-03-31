@@ -11,6 +11,7 @@ public class SwaggerConfig {
     public OpenAPI customOpenApi() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("Eat_Smart"));
+                        .title("EatSmart API")
+                        .version("1.0.0"));
     }
 }

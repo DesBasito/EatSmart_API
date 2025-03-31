@@ -1,14 +1,14 @@
 package kg.manurov.eatsmartapi.services.interfaces;
 
 import kg.manurov.eatsmartapi.dto.UserDto;
-import kg.manurov.eatsmartapi.dto.UserReportDto;
-
-import java.time.LocalDate;
+import kg.manurov.eatsmartapi.models.User;
 
 public interface UserService {
     UserDto create(UserDto userDto);
 
+    UserDto getUserDtoById(Long userId);
+
     Boolean checkUniqueEmail(String email);
 
-    UserReportDto getUserReport(Long id, LocalDate date);
+    User getUserById(Long userId);
 }

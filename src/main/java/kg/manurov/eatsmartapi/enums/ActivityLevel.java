@@ -18,17 +18,12 @@ public enum ActivityLevel implements EnumInterface {
         this.factor = factor;
     }
 
-    @Override
-    public String getDescription() {
-        return description;
-    }
-
-    public static Boolean isExists(String value) {
+    public static double getFactor(String value){
         for (ActivityLevel type : ActivityLevel.values()) {
-            if (type.description.equalsIgnoreCase(value)) {
-                return true;
+            if (type.toString().equalsIgnoreCase(value)) {
+                return type.factor;
             }
         }
-        return false;
+        throw new IllegalArgumentException(String.format("Тип %s не найден",value));
     }
 }

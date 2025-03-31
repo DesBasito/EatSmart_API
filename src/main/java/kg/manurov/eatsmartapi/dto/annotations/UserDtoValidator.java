@@ -10,6 +10,8 @@ import kg.manurov.eatsmartapi.enums.GoalType;
 import kg.manurov.eatsmartapi.services.interfaces.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import static kg.manurov.eatsmartapi.enums.EnumInterface.getEnumDescription;
+
 public class UserDtoValidator implements ConstraintValidator<ValidUserDto, UserDto> {
 
     @Autowired
@@ -28,21 +30,21 @@ public class UserDtoValidator implements ConstraintValidator<ValidUserDto, UserD
             isValid = false;
         }
 
-        if (Boolean.FALSE.equals(checkGoal(value.goal()))) {
+        if (Boolean.FALSE.equals(EnumInterface.isExists(GoalType.class,value.goalType()))) {
             context.buildConstraintViolationWithTemplate(getEnumDescription(GoalType.class))
-                    .addPropertyNode("goal")
+                    .addPropertyNode("goalType")
                     .addConstraintViolation();
             isValid = false;
         }
 
-        if (Boolean.FALSE.equals(checkActivity(value.activityLevel()))) {
+        if (Boolean.FALSE.equals(EnumInterface.isExists(ActivityLevel.class,value.activityLevel()))) {
             context.buildConstraintViolationWithTemplate(getEnumDescription(ActivityLevel.class))
                     .addPropertyNode("activityLevel")
                     .addConstraintViolation();
             isValid = false;
         }
 
-        if (Boolean.FALSE.equals(checkGender(value.gender()))) {
+        if (Boolean.FALSE.equals(EnumInterface.isExists(Gender.class,value.gender()))) {
             context.buildConstraintViolationWithTemplate(getEnumDescription(Gender.class))
                     .addPropertyNode("gender")
                     .addConstraintViolation();
@@ -54,27 +56,6 @@ public class UserDtoValidator implements ConstraintValidator<ValidUserDto, UserD
 
     private Boolean checkEmail(String email){
         return email != null && Boolean.FALSE.equals(userService.checkUniqueEmail(email));
-    }
-
-    private Boolean checkGoal(String goal){
-        return goal != null && Boolean.TRUE.equals(GoalType.isExists(goal));
-    }
-
-    private Boolean checkGender(String gender){
-        return gender != null && Boolean.TRUE.equals(Gender.isExists(gender));
-    }
-
-    private Boolean checkActivity(String activity){
-        return activity != null && Boolean.TRUE.equals(ActivityLevel.isExists(activity));
-    }
-
-    private <E extends Enum<E> & EnumInterface> String getEnumDescription(Class<E> enumClass) {
-        StringBuilder str = new StringBuilder();
-        str.append("Указан неверный тип. Укажите одну из: ");
-        for (E enumValue : enumClass.getEnumConstants()) {
-            str.append(String.format("-> %s ",enumValue.getDescription()));
-        }
-        return str.toString();
     }
 
 }

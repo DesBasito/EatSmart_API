@@ -1,5 +1,8 @@
 package kg.manurov.eatsmartapi.enums;
 
+import lombok.Getter;
+
+@Getter
 public enum Gender implements EnumInterface {
     MALE("Мужчина"),
     TRANS("Десептикон"),
@@ -9,18 +12,5 @@ public enum Gender implements EnumInterface {
 
     Gender(String description) {
         this.description = description;
-    }
-
-    @Override
-    public String getDescription() {
-        return description;
-    }
-    public static Boolean isExists(String value) {
-        for (Gender type : Gender.values()) {
-            if (type.description.equalsIgnoreCase(value)) {
-                return true;
-            }
-        }
-        return false;
     }
 }

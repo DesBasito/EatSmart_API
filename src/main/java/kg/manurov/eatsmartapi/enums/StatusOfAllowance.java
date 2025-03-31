@@ -1,5 +1,8 @@
 package kg.manurov.eatsmartapi.enums;
 
+import lombok.Getter;
+
+@Getter
 public enum StatusOfAllowance {
     NORMAL("Уложился в норму"),
     DEFICIT("Не уложился (не хватило калорий)"),
@@ -9,9 +12,5 @@ public enum StatusOfAllowance {
 
     StatusOfAllowance(String description) {
         this.description = description;
-    }
-
-    public String getDescription() {
-        return description;
     }
 }

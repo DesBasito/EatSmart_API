@@ -1,5 +1,8 @@
 package kg.manurov.eatsmartapi.enums;
 
+import lombok.Getter;
+
+@Getter
 public enum GoalType implements EnumInterface {
     LOSE_WEIGHT("похудение"),
     GAIN_MUSCLE("набор массы"),
@@ -9,19 +12,5 @@ public enum GoalType implements EnumInterface {
 
     GoalType(String description) {
         this.description = description;
-    }
-
-    @Override
-    public String getDescription() {
-        return description;
-    }
-
-    public static Boolean isExists(String value) {
-        for (GoalType goal : GoalType.values()) {
-            if (goal.description.equalsIgnoreCase(value)) {
-                return true;
-            }
-        }
-        return false;
     }
 }

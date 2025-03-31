@@ -8,10 +8,10 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Constraint(validatedBy = MealDtoValidator.class)
-@Target({ElementType.TYPE})
+@Constraint(validatedBy = MealTypeValidator.class)
+@Target({ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface ValidMealDto {
+public @interface ValidMealType {
     String message() default "Data not valid!";
 
     Class<?>[] groups() default {};
