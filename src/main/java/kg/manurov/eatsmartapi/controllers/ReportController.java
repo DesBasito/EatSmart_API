@@ -19,7 +19,7 @@ public class ReportController {
 
     @GetMapping("/user/{userId}")
     @Operation(
-            summary = "Получения записи у пользователя за текущий день",
+            summary = "получение полного отчета за день",
             description = "Эндпоинт проверки, уложился ли пользователь в свою норму."
     )
     public ResponseEntity<UserReportDto> getUserAllowanceByDate(@PathVariable Long userId,
@@ -37,11 +37,11 @@ public class ReportController {
         return ResponseEntity.ok(reportService.getFullUserInfoPerDay(userId,date));
     }
     @Operation(
-            summary = "получение отчета за день",
+            summary = "Получения записи у пользователя за текущий день",
             description = "Этот эндпоинт возвращает отчет за день: сумма всех калорий и приемов пищи.."
     )
     @GetMapping("/user/{userId}/today")
     public ResponseEntity<ReportDto> getUserAllowanceInfoByCurrentDate(@PathVariable Long userId){
-        return ResponseEntity.ok(reportService.getReportOfCurrentDay(userId));
+        return ResponseEntity.ok(reportService.getReportOfCurrentDay(userId, LocalDate.now()));
     }
 }

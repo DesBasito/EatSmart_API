@@ -15,5 +15,5 @@ public interface ReportService {
 
     FullUserReportDto getFullUserInfoPerDay(Long userId, LocalDate date);
 
-    ReportDto getReportOfCurrentDay(Long userId);
+    ReportDto getReportOfCurrentDay(Long userId,LocalDate date);
 }

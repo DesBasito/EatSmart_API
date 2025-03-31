@@ -5,8 +5,8 @@ import lombok.Getter;
 @Getter
 public enum StatusOfAllowance {
     NORMAL("Уложился в норму"),
-    DEFICIT("Не уложился (не хватило калорий)"),
-    EXCESS("Не уложился (превысил норму калорий)");
+    DEFICIT("Не уложился - не хватило калорий"),
+    EXCESS("Не уложился - превысил норму калорий");
 
     private final String description;
 

@@ -33,6 +33,18 @@ public class ReportServiceImpl implements ReportService {
     @Override
     @Scheduled(cron = "0 0 0 * * ?")
     public void chargeDailyReports() {
+        List<User> users = userService.getAllUsers();
+        LocalDate passDay = LocalDate.now().minusDays(1);
+        users.forEach(u ->{
+            Double totCal = getReportOfCurrentDay(u.getId(),passDay)
+                    .actualAllowance()
+                    .doubleValue();
+            repository.save(Report.builder()
+                            .totalCalories(totCal)
+                            .date(passDay)
+                            .user(u)
+                    .build());
+        });
     }
 
     @Override
@@ -58,8 +70,8 @@ public class ReportServiceImpl implements ReportService {
     }
 
     @Override
-    public ReportDto getReportOfCurrentDay(Long userId){
-        List<MealDto> meals = mealService.getMealsByUserIdAndDate(userId,LocalDate.now());
+    public ReportDto getReportOfCurrentDay(Long userId, LocalDate date){
+        List<MealDto> meals = mealService.getMealsByUserIdAndDate(userId,date);
         if (meals == null) return null;
 
         User user = userService.getUserById(userId);
@@ -74,21 +86,4 @@ public class ReportServiceImpl implements ReportService {
                 .status(status)
                 .build();
     }
-
-//    private UserReportDto calculateUserReport(LocalDate localDate){
-//        BigDecimal dailyAllowance = DailyAllowanceUtil.calculateTotalCalories(user);
-//        Double calories = meals.stream()
-//                .flatMap(meal -> meal.getDishes().stream())
-//                .mapToDouble(Dish::getCalories)
-//                .sum();
-//        BigDecimal totalCaloriesPerDay = BigDecimal.valueOf(calories).setScale(2, RoundingMode.HALF_UP);
-//        String status = DailyAllowanceUtil.statusOfAllowance(dailyAllowance,totalCaloriesPerDay);
-//
-//        return UserReportDto.builder()
-//                .username(user.getName())
-//                .dailyAllowance(dailyAllowance)
-//                .date()
-//                .status(status)
-//                .build();
-//    }
 }

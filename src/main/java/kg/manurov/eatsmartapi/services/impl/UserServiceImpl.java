@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 
 @Service
@@ -27,9 +28,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDto getUserDtoById(Long userId) {
-        User user = repository.findById(userId).orElseThrow(NoSuchElementException::new);
-        return userMapper.toDto(user);
+    public List<User> getAllUsers() {
+        return repository.findAll();
     }
 
     @Override

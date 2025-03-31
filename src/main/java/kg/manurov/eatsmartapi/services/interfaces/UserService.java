@@ -3,10 +3,12 @@ package kg.manurov.eatsmartapi.services.interfaces;
 import kg.manurov.eatsmartapi.dto.UserDto;
 import kg.manurov.eatsmartapi.models.User;
 
+import java.util.List;
+
 public interface UserService {
     UserDto create(UserDto userDto);
 
-    UserDto getUserDtoById(Long userId);
+    List<User> getAllUsers();
 
     Boolean checkUniqueEmail(String email);
 
