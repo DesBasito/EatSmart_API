@@ -1,4 +1,4 @@
-# Система проверки правильного питания
+# Система проверки правильного питания (https://docs.google.com/document/d/11yEfzp2Rj0v-PFfAOwnJPydv0AmIy0F6yY391sPSxn8/edit?tab=t.0)
 
 ## Описание проекта
 
@@ -36,10 +36,11 @@ REST API-сервис для учета дневной нормы калорий
 - Spring Boot
 - Spring Data JPA
 - PostgreSQL
+- JUnit & Mockito
 - Docker(для базы данных)
 - Lombok
-- Liquibase для миграций
-- Swagger для документации
+- Liquibase (для миграций)
+- Swagger (для документации)
 
 ## План выполненных задач:
 
