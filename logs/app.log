@@ -76,3 +76,6 @@
 2025-04-07T05:42:53.318+06:00 ERROR 20487 --- [EatSmart API] [http-nio-9090-exec-2] k.m.e.exception.GlobalExceptionHandler   : JSON parse error: Cannot deserialize value of type `java.lang.Long` from String "<long>": not a valid `java.lang.Long` value
 2025-04-07T05:43:04.587+06:00  INFO 20487 --- [EatSmart API] [http-nio-9090-exec-3] k.m.e.services.impl.MealServiceImpl      : Adding new meal report to db: SNACK
 2025-04-07T05:43:14.408+06:00  INFO 20487 --- [EatSmart API] [http-nio-9090-exec-4] k.m.e.services.impl.MealServiceImpl      : Adding new meal report to db: SNACK
+2025-04-07T05:43:51.439+06:00  INFO 20487 --- [EatSmart API] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-07T05:43:51.474+06:00  INFO 20487 --- [EatSmart API] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-04-07T05:43:51.524+06:00  INFO 20487 --- [EatSmart API] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
