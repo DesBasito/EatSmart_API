@@ -1,0 +1,605 @@
+{
+	"info": {
+		"_postman_id": "5656d5d6-d256-4572-8af7-a9a450f9aef1",
+		"name": "Eat_Smart API",
+		"description": "qwe API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32969523"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "meals",
+					"item": [
+						{
+							"name": "{userId}",
+							"item": [
+								{
+									"name": "Добавления приема пищи",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<long>\",\n  \"mealType\": \"<string>\",\n  \"dishes\": [\n    {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"calories\": \"<double>\",\n      \"protein\": \"<double>\",\n      \"fats\": \"<double>\",\n      \"carbohydrates\": \"<double>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"calories\": \"<double>\",\n      \"protein\": \"<double>\",\n      \"fats\": \"<double>\",\n      \"carbohydrates\": \"<double>\"\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/meals/:userId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"meals",
+												":userId"
+											],
+											"variable": [
+												{
+													"key": "userId",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Эндпоинт для создание приема пищи. Возвращает сущность данного объекта и принимает айди с uri id пользователя."
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<long>\",\n  \"mealType\": \"<string>\",\n  \"dishes\": [\n    {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"calories\": \"<double>\",\n      \"protein\": \"<double>\",\n      \"fats\": \"<double>\",\n      \"carbohydrates\": \"<double>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"calories\": \"<double>\",\n      \"protein\": \"<double>\",\n      \"fats\": \"<double>\",\n      \"carbohydrates\": \"<double>\"\n    }\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://localhost:9090/api/meals/:userId",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "9090",
+													"path": [
+														"api",
+														"meals",
+														":userId"
+													],
+													"variable": [
+														{
+															"key": "userId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<long>\",\n  \"mealType\": \"<string>\",\n  \"dishes\": [\n    {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"calories\": \"<double>\",\n      \"protein\": \"<double>\",\n      \"fats\": \"<double>\",\n      \"carbohydrates\": \"<double>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"calories\": \"<double>\",\n      \"protein\": \"<double>\",\n      \"fats\": \"<double>\",\n      \"carbohydrates\": \"<double>\"\n    }\n  ]\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "dishes",
+					"item": [
+						{
+							"name": "Добавления пищи",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"calories\": \"<double>\",\n  \"protein\": \"<double>\",\n  \"fats\": \"<double>\",\n  \"carbohydrates\": \"<double>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/dishes",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"dishes"
+									]
+								},
+								"description": "Эндпоинт для создание пищи. Возвращает сущности DishDto"
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"calories\": \"<double>\",\n  \"protein\": \"<double>\",\n  \"fats\": \"<double>\",\n  \"carbohydrates\": \"<double>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:9090/api/dishes",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9090",
+											"path": [
+												"api",
+												"dishes"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"calories\": \"<double>\",\n  \"protein\": \"<double>\",\n  \"fats\": \"<double>\",\n  \"carbohydrates\": \"<double>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "users",
+					"item": [
+						{
+							"name": "Создание пользователя",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"age\": \"<integer>\",\n  \"height\": \"<double>\",\n  \"weight\": \"<double>\",\n  \"email\": \"<string>\",\n  \"activityLevel\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"goalType\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								},
+								"description": "Этот эндпоинт создает нового пользователя и возвращает его данные в виде `UserDto`."
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"age\": \"<integer>\",\n  \"height\": \"<double>\",\n  \"weight\": \"<double>\",\n  \"email\": \"<string>\",\n  \"activityLevel\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"goalType\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:9090/api/users",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9090",
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"age\": \"<integer>\",\n  \"height\": \"<double>\",\n  \"weight\": \"<double>\",\n  \"email\": \"<string>\",\n  \"activityLevel\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"goalType\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "reports",
+					"item": [
+						{
+							"name": "user",
+							"item": [
+								{
+									"name": "{userId}",
+									"item": [
+										{
+											"name": "full",
+											"item": [
+												{
+													"name": "получение полного отчета за день",
+													"request": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/reports/user/:userId/full?date=<date>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"reports",
+																"user",
+																":userId",
+																"full"
+															],
+															"query": [
+																{
+																	"key": "date",
+																	"value": "<date>",
+																	"description": "(Required) "
+																}
+															],
+															"variable": [
+																{
+																	"key": "userId",
+																	"value": "<long>",
+																	"description": "(Required) "
+																}
+															]
+														},
+														"description": "Этот эндпоинт возвращает Историю питания по дням.."
+													},
+													"response": [
+														{
+															"name": "OK",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "*/*"
+																	}
+																],
+																"url": {
+																	"raw": "http://localhost:9090/api/reports/user/:userId/full?date=<date>",
+																	"protocol": "http",
+																	"host": [
+																		"localhost"
+																	],
+																	"port": "9090",
+																	"path": [
+																		"api",
+																		"reports",
+																		"user",
+																		":userId",
+																		"full"
+																	],
+																	"query": [
+																		{
+																			"key": "date",
+																			"value": "<date>",
+																			"description": "(Required) "
+																		}
+																	],
+																	"variable": [
+																		{
+																			"key": "userId"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "*/*"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"username\": \"<string>\",\n  \"date\": \"<date>\",\n  \"mealDto\": [\n    {\n      \"id\": \"<long>\",\n      \"mealType\": \"<string>\",\n      \"dishes\": [\n        {\n          \"id\": \"<long>\",\n          \"name\": \"<string>\",\n          \"calories\": \"<double>\",\n          \"protein\": \"<double>\",\n          \"fats\": \"<double>\",\n          \"carbohydrates\": \"<double>\"\n        },\n        {\n          \"id\": \"<long>\",\n          \"name\": \"<string>\",\n          \"calories\": \"<double>\",\n          \"protein\": \"<double>\",\n          \"fats\": \"<double>\",\n          \"carbohydrates\": \"<double>\"\n        }\n      ]\n    },\n    {\n      \"id\": \"<long>\",\n      \"mealType\": \"<string>\",\n      \"dishes\": [\n        {\n          \"id\": \"<long>\",\n          \"name\": \"<string>\",\n          \"calories\": \"<double>\",\n          \"protein\": \"<double>\",\n          \"fats\": \"<double>\",\n          \"carbohydrates\": \"<double>\"\n        },\n        {\n          \"id\": \"<long>\",\n          \"name\": \"<string>\",\n          \"calories\": \"<double>\",\n          \"protein\": \"<double>\",\n          \"fats\": \"<double>\",\n          \"carbohydrates\": \"<double>\"\n        }\n      ]\n    }\n  ]\n}"
+														}
+													]
+												}
+											]
+										},
+										{
+											"name": "today",
+											"item": [
+												{
+													"name": "Получения записи у пользователя за текущий день",
+													"request": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/reports/user/:userId/today",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"reports",
+																"user",
+																":userId",
+																"today"
+															],
+															"variable": [
+																{
+																	"key": "userId",
+																	"value": "<long>",
+																	"description": "(Required) "
+																}
+															]
+														},
+														"description": "Этот эндпоинт возвращает отчет за день: сумма всех калорий и приемов пищи.."
+													},
+													"response": [
+														{
+															"name": "OK",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "*/*"
+																	}
+																],
+																"url": {
+																	"raw": "http://localhost:9090/api/reports/user/:userId/today",
+																	"protocol": "http",
+																	"host": [
+																		"localhost"
+																	],
+																	"port": "9090",
+																	"path": [
+																		"api",
+																		"reports",
+																		"user",
+																		":userId",
+																		"today"
+																	],
+																	"variable": [
+																		{
+																			"key": "userId"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "*/*"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"username\": \"<string>\",\n  \"actualAllowance\": {},\n  \"dailyAllowance\": {},\n  \"status\": \"<string>\",\n  \"mealDtos\": [\n    {\n      \"id\": \"<long>\",\n      \"mealType\": \"<string>\",\n      \"dishes\": [\n        {\n          \"id\": \"<long>\",\n          \"name\": \"<string>\",\n          \"calories\": \"<double>\",\n          \"protein\": \"<double>\",\n          \"fats\": \"<double>\",\n          \"carbohydrates\": \"<double>\"\n        },\n        {\n          \"id\": \"<long>\",\n          \"name\": \"<string>\",\n          \"calories\": \"<double>\",\n          \"protein\": \"<double>\",\n          \"fats\": \"<double>\",\n          \"carbohydrates\": \"<double>\"\n        }\n      ]\n    },\n    {\n      \"id\": \"<long>\",\n      \"mealType\": \"<string>\",\n      \"dishes\": [\n        {\n          \"id\": \"<long>\",\n          \"name\": \"<string>\",\n          \"calories\": \"<double>\",\n          \"protein\": \"<double>\",\n          \"fats\": \"<double>\",\n          \"carbohydrates\": \"<double>\"\n        },\n        {\n          \"id\": \"<long>\",\n          \"name\": \"<string>\",\n          \"calories\": \"<double>\",\n          \"protein\": \"<double>\",\n          \"fats\": \"<double>\",\n          \"carbohydrates\": \"<double>\"\n        }\n      ]\n    }\n  ]\n}"
+														}
+													]
+												}
+											]
+										},
+										{
+											"name": "получение полного отчета за день",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/reports/user/:userId?date=<date>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"reports",
+														"user",
+														":userId"
+													],
+													"query": [
+														{
+															"key": "date",
+															"value": "<date>",
+															"description": "(Required) "
+														}
+													],
+													"variable": [
+														{
+															"key": "userId",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													]
+												},
+												"description": "Эндпоинт проверки, уложился ли пользователь в свою норму."
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"url": {
+															"raw": "http://localhost:9090/api/reports/user/:userId?date=<date>",
+															"protocol": "http",
+															"host": [
+																"localhost"
+															],
+															"port": "9090",
+															"path": [
+																"api",
+																"reports",
+																"user",
+																":userId"
+															],
+															"query": [
+																{
+																	"key": "date",
+																	"value": "<date>",
+																	"description": "(Required) "
+																}
+															],
+															"variable": [
+																{
+																	"key": "userId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"username\": \"<string>\",\n  \"date\": \"<date>\",\n  \"dailyAllowance\": {},\n  \"actualAllowance\": {},\n  \"status\": \"<string>\"\n}"
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:9090"
+		}
+	]
+}
