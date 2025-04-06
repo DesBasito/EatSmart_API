@@ -9,6 +9,7 @@ import kg.manurov.eatsmartapi.repositories.MealRepository;
 import kg.manurov.eatsmartapi.services.interfaces.MealService;
 import kg.manurov.eatsmartapi.services.interfaces.UserService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +19,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Service
+@Slf4j
 public class MealServiceImpl implements MealService {
     private final MealRepository mealRepository;
     private final MealMapper mealMapper;
@@ -54,6 +56,7 @@ public class MealServiceImpl implements MealService {
         Meal meal = mealMapper.toEntity(mealDto);
         meal.setUser(user);
         mealRepository.save(meal);
+        log.info("Adding new meal report to db: {}",meal.getMealType());
         return mealMapper.toDto(meal);
     }
 }

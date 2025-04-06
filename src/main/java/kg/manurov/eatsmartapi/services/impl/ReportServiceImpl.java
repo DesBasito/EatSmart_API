@@ -12,6 +12,7 @@ import kg.manurov.eatsmartapi.services.interfaces.MealService;
 import kg.manurov.eatsmartapi.services.interfaces.ReportService;
 import kg.manurov.eatsmartapi.services.interfaces.UserService;
 import kg.manurov.eatsmartapi.util.DailyAllowanceUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
@@ -23,6 +24,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 @Service
+@Slf4j
 public class ReportServiceImpl implements ReportService {
     private final MealService mealService;
     private final UserService userService;
@@ -46,6 +48,7 @@ public class ReportServiceImpl implements ReportService {
             Double totCal = getReportOfCurrentDay(u.getId(),passDay)
                     .actualAllowance()
                     .doubleValue();
+            log.info("adding daily report for user (email): {}", u.getEmail());
             repository.save(Report.builder()
                             .totalCalories(totCal)
                             .date(passDay)

@@ -2,6 +2,7 @@ package kg.manurov.eatsmartapi.services.impl;
 
 import kg.manurov.eatsmartapi.exception.ErrorResponseBody;
 import kg.manurov.eatsmartapi.services.interfaces.ErrorService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
@@ -10,6 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Slf4j
 @Service
 public class ErrorServiceImpl implements ErrorService {
     @Override
@@ -33,6 +35,7 @@ public class ErrorServiceImpl implements ErrorService {
                         reasons.put(e.getField(),errors);
                     }
                 });
+        log.error("Errors while adding data to db {}", reasons);
         return ErrorResponseBody.builder()
                 .title("Valid errors")
                 .response(reasons)

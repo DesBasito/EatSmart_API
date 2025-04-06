@@ -17,3 +17,16 @@ spring:
   jpa:
     hibernate:
       ddl-auto: validate
+logging:
+  file:
+    name: logs/app.log
+  level:
+    root: INFO
+    org.springframework: INFO
+    com.zaxxer.hikari: ERROR
+    liquibase: ERROR
+    org.springframework.security: ERROR
+  logback:
+    rolling policy:
+      max-history: 5
+      max-file-size: 10MB
