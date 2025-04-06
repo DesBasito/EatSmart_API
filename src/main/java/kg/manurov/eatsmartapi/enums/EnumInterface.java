@@ -14,7 +14,7 @@ public interface EnumInterface {
 
     static <E extends Enum<E> & EnumInterface> String getType(Class<E> enumClass, String value) {
         for (E type : enumClass.getEnumConstants()) {
-            if (type.getDescription().equalsIgnoreCase(value)) {
+            if (type.getDescription().equalsIgnoreCase(value.strip())) {
                 return type.name();
             }
         }
@@ -22,7 +22,7 @@ public interface EnumInterface {
     }
     static <E extends Enum<E> & EnumInterface> Boolean isExists(Class<E> enumClass,String value) {
         for (E type : enumClass.getEnumConstants()) {
-            if (type.getDescription().equalsIgnoreCase(value)) {
+            if (type.getDescription().equalsIgnoreCase(value.strip())) {
                 return true;
             }
         }
