@@ -1,0 +1,78 @@
+2025-04-07T05:32:23.463+06:00  INFO 20303 --- [EatSmart API] [main] k.m.eatsmartapi.EatSmartApiApplication   : Starting EatSmartApiApplication using Java 21.0.2 with PID 20303 (/Users/abu/Desktop/work/EatSmart API/qwe/target/classes started by abu in /Users/abu/Desktop/work/EatSmart API/qwe)
+2025-04-07T05:32:23.494+06:00  INFO 20303 --- [EatSmart API] [main] k.m.eatsmartapi.EatSmartApiApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-04-07T05:32:24.621+06:00  INFO 20303 --- [EatSmart API] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-07T05:32:24.715+06:00  INFO 20303 --- [EatSmart API] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 86 ms. Found 4 JPA repository interfaces.
+2025-04-07T05:32:25.234+06:00  INFO 20303 --- [EatSmart API] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
+2025-04-07T05:32:25.249+06:00  INFO 20303 --- [EatSmart API] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-07T05:32:25.249+06:00  INFO 20303 --- [EatSmart API] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-07T05:32:25.300+06:00  INFO 20303 --- [EatSmart API] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-07T05:32:25.300+06:00  INFO 20303 --- [EatSmart API] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1746 ms
+2025-04-07T05:32:26.699+06:00  INFO 20303 --- [EatSmart API] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-07T05:32:26.740+06:00  INFO 20303 --- [EatSmart API] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.0.Final
+2025-04-07T05:32:26.761+06:00  INFO 20303 --- [EatSmart API] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-07T05:32:26.913+06:00  INFO 20303 --- [EatSmart API] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-07T05:32:27.923+06:00  INFO 20303 --- [EatSmart API] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-07T05:32:27.980+06:00  INFO 20303 --- [EatSmart API] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-07T05:32:28.315+06:00  INFO 20303 --- [EatSmart API] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-07T05:32:28.876+06:00  WARN 20303 --- [EatSmart API] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-07T05:32:29.336+06:00  INFO 20303 --- [EatSmart API] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path '/'
+2025-04-07T05:32:29.352+06:00  INFO 20303 --- [EatSmart API] [main] k.m.eatsmartapi.EatSmartApiApplication   : Started EatSmartApiApplication in 6.576 seconds (process running for 7.598)
+2025-04-07T05:35:10.436+06:00  INFO 20303 --- [EatSmart API] [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-07T05:35:10.440+06:00  INFO 20303 --- [EatSmart API] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-07T05:35:10.449+06:00  INFO 20303 --- [EatSmart API] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2025-04-07T05:35:10.942+06:00  WARN 20303 --- [EatSmart API] [http-nio-9090-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.lang.Long` from String "<long>": not a valid `java.lang.Long` value]
+2025-04-07T05:40:26.845+06:00  INFO 20303 --- [EatSmart API] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-07T05:40:26.961+06:00  INFO 20303 --- [EatSmart API] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-04-07T05:40:27.053+06:00  INFO 20303 --- [EatSmart API] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-07T05:40:37.177+06:00  INFO 20429 --- [EatSmart API] [main] k.m.eatsmartapi.EatSmartApiApplication   : Starting EatSmartApiApplication using Java 21.0.2 with PID 20429 (/Users/abu/Desktop/work/EatSmart API/qwe/target/classes started by abu in /Users/abu/Desktop/work/EatSmart API/qwe)
+2025-04-07T05:40:37.180+06:00  INFO 20429 --- [EatSmart API] [main] k.m.eatsmartapi.EatSmartApiApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-04-07T05:40:38.374+06:00  INFO 20429 --- [EatSmart API] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-07T05:40:38.492+06:00  INFO 20429 --- [EatSmart API] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 106 ms. Found 4 JPA repository interfaces.
+2025-04-07T05:40:39.037+06:00  INFO 20429 --- [EatSmart API] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
+2025-04-07T05:40:39.049+06:00  INFO 20429 --- [EatSmart API] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-07T05:40:39.049+06:00  INFO 20429 --- [EatSmart API] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-07T05:40:39.095+06:00  INFO 20429 --- [EatSmart API] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-07T05:40:39.138+06:00  INFO 20429 --- [EatSmart API] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1872 ms
+2025-04-07T05:40:40.602+06:00  INFO 20429 --- [EatSmart API] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-07T05:40:40.644+06:00  INFO 20429 --- [EatSmart API] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.0.Final
+2025-04-07T05:40:40.664+06:00  INFO 20429 --- [EatSmart API] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-07T05:40:40.810+06:00  INFO 20429 --- [EatSmart API] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-07T05:40:41.817+06:00  INFO 20429 --- [EatSmart API] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-07T05:40:41.876+06:00  INFO 20429 --- [EatSmart API] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-07T05:40:42.236+06:00  INFO 20429 --- [EatSmart API] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-07T05:40:42.799+06:00  WARN 20429 --- [EatSmart API] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-07T05:40:43.601+06:00  INFO 20429 --- [EatSmart API] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path '/'
+2025-04-07T05:40:43.621+06:00  INFO 20429 --- [EatSmart API] [main] k.m.eatsmartapi.EatSmartApiApplication   : Started EatSmartApiApplication in 7.078 seconds (process running for 7.967)
+2025-04-07T05:40:49.122+06:00  INFO 20429 --- [EatSmart API] [http-nio-9090-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-07T05:40:49.123+06:00  INFO 20429 --- [EatSmart API] [http-nio-9090-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-07T05:40:49.132+06:00  INFO 20429 --- [EatSmart API] [http-nio-9090-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2025-04-07T05:40:49.264+06:00  WARN 20429 --- [EatSmart API] [http-nio-9090-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.lang.Long` from String "<long>": not a valid `java.lang.Long` value]
+2025-04-07T05:40:58.199+06:00  WARN 20429 --- [EatSmart API] [http-nio-9090-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.lang.Long` from String "<long>": not a valid `java.lang.Long` value]
+2025-04-07T05:42:37.210+06:00  INFO 20429 --- [EatSmart API] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-07T05:42:37.226+06:00  INFO 20429 --- [EatSmart API] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-04-07T05:42:37.250+06:00  INFO 20429 --- [EatSmart API] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-07T05:42:44.059+06:00  INFO 20487 --- [EatSmart API] [main] k.m.eatsmartapi.EatSmartApiApplication   : Starting EatSmartApiApplication using Java 21.0.2 with PID 20487 (/Users/abu/Desktop/work/EatSmart API/qwe/target/classes started by abu in /Users/abu/Desktop/work/EatSmart API/qwe)
+2025-04-07T05:42:44.062+06:00  INFO 20487 --- [EatSmart API] [main] k.m.eatsmartapi.EatSmartApiApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-04-07T05:42:45.185+06:00  INFO 20487 --- [EatSmart API] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-07T05:42:45.275+06:00  INFO 20487 --- [EatSmart API] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 82 ms. Found 4 JPA repository interfaces.
+2025-04-07T05:42:45.797+06:00  INFO 20487 --- [EatSmart API] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
+2025-04-07T05:42:45.808+06:00  INFO 20487 --- [EatSmart API] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-07T05:42:45.809+06:00  INFO 20487 --- [EatSmart API] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-07T05:42:45.853+06:00  INFO 20487 --- [EatSmart API] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-07T05:42:45.854+06:00  INFO 20487 --- [EatSmart API] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1705 ms
+2025-04-07T05:42:47.129+06:00  INFO 20487 --- [EatSmart API] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-07T05:42:47.171+06:00  INFO 20487 --- [EatSmart API] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.0.Final
+2025-04-07T05:42:47.192+06:00  INFO 20487 --- [EatSmart API] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-07T05:42:47.351+06:00  INFO 20487 --- [EatSmart API] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-07T05:42:48.377+06:00  INFO 20487 --- [EatSmart API] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-07T05:42:48.433+06:00  INFO 20487 --- [EatSmart API] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-07T05:42:48.774+06:00  INFO 20487 --- [EatSmart API] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-07T05:42:49.342+06:00  WARN 20487 --- [EatSmart API] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-07T05:42:49.812+06:00  INFO 20487 --- [EatSmart API] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path '/'
+2025-04-07T05:42:49.827+06:00  INFO 20487 --- [EatSmart API] [main] k.m.eatsmartapi.EatSmartApiApplication   : Started EatSmartApiApplication in 6.395 seconds (process running for 7.368)
+2025-04-07T05:42:53.073+06:00  INFO 20487 --- [EatSmart API] [http-nio-9090-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-07T05:42:53.080+06:00  INFO 20487 --- [EatSmart API] [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-07T05:42:53.095+06:00  INFO 20487 --- [EatSmart API] [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
+2025-04-07T05:42:53.318+06:00 ERROR 20487 --- [EatSmart API] [http-nio-9090-exec-2] k.m.e.exception.GlobalExceptionHandler   : JSON parse error: Cannot deserialize value of type `java.lang.Long` from String "<long>": not a valid `java.lang.Long` value
+2025-04-07T05:43:04.587+06:00  INFO 20487 --- [EatSmart API] [http-nio-9090-exec-3] k.m.e.services.impl.MealServiceImpl      : Adding new meal report to db: SNACK
+2025-04-07T05:43:14.408+06:00  INFO 20487 --- [EatSmart API] [http-nio-9090-exec-4] k.m.e.services.impl.MealServiceImpl      : Adding new meal report to db: SNACK

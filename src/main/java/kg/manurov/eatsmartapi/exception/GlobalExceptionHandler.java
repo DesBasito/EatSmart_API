@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.ErrorResponse;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -24,9 +25,9 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(NullPointerException.class)
-    public ErrorResponse nullPointerExceptions(NullPointerException e){
+    public ResponseEntity<ErrorResponseBody> nullPointerExceptions(NullPointerException e){
         log.error(e.getMessage());
-        return ErrorResponse.builder(e, HttpStatus.NO_CONTENT,e.getMessage()).build();
+        return new ResponseEntity<>(errorService.makeResponse(e), HttpStatus.NO_CONTENT);
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
@@ -36,9 +37,15 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(IllegalArgumentException.class)
-    public ErrorResponse alreadyExistsException(IllegalArgumentException ex){
+    public ResponseEntity<ErrorResponseBody> throwIllegalException(IllegalArgumentException ex){
         log.error(ex.getMessage());
-        return ErrorResponse.builder(ex,HttpStatus.CONFLICT,ex.getMessage()).build();
+        return new ResponseEntity<>(errorService.makeResponse(ex), HttpStatus.CONFLICT);
+    }
+
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    public ResponseEntity<ErrorResponseBody> httpMethodException(HttpMessageNotReadableException ex){
+        log.error(ex.getMessage());
+        return new ResponseEntity<>(errorService.makeResponse(ex), HttpStatus.CONFLICT);
     }
 }
 
