@@ -14,5 +14,4 @@ public enum MealTypes implements EnumInterface{
     MealTypes(String description) {
         this.description = description;
     }
-
 }

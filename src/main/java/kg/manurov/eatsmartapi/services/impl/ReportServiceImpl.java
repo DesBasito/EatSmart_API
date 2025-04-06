@@ -12,7 +12,7 @@ import kg.manurov.eatsmartapi.services.interfaces.MealService;
 import kg.manurov.eatsmartapi.services.interfaces.ReportService;
 import kg.manurov.eatsmartapi.services.interfaces.UserService;
 import kg.manurov.eatsmartapi.util.DailyAllowanceUtil;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
@@ -23,12 +23,19 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 @Service
-@RequiredArgsConstructor
 public class ReportServiceImpl implements ReportService {
     private final MealService mealService;
     private final UserService userService;
     private final ReportRepository repository;
     private final ReportMapper reportMapper;
+
+    @Autowired
+    public ReportServiceImpl(MealService mealService, UserService userService, ReportRepository repository, ReportMapper reportMapper) {
+        this.mealService = mealService;
+        this.userService = userService;
+        this.repository = repository;
+        this.reportMapper = reportMapper;
+    }
 
     @Override
     @Scheduled(cron = "0 0 0 * * ?")

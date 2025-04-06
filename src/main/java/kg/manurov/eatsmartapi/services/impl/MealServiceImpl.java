@@ -9,6 +9,7 @@ import kg.manurov.eatsmartapi.repositories.MealRepository;
 import kg.manurov.eatsmartapi.services.interfaces.MealService;
 import kg.manurov.eatsmartapi.services.interfaces.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -17,11 +18,18 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
 public class MealServiceImpl implements MealService {
     private final MealRepository mealRepository;
     private final MealMapper mealMapper;
     private final UserService userService;
+
+    @Autowired
+    public MealServiceImpl(MealRepository mealRepository, MealMapper mealMapper, UserService userService) {
+        this.mealRepository = mealRepository;
+        this.mealMapper = mealMapper;
+        this.userService = userService;
+    }
+
     @Override
     public List<MealDto> getMealsByUserIdAndDate(Long userId, LocalDate date) {
         return mealRepository.getMealsByUser_IdAndDate(userId, date)

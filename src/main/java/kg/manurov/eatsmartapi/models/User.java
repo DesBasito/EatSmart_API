@@ -4,14 +4,16 @@ import jakarta.persistence.*;
 import kg.manurov.eatsmartapi.enums.ActivityLevel;
 import kg.manurov.eatsmartapi.enums.Gender;
 import kg.manurov.eatsmartapi.enums.GoalType;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Getter
 @Setter
+@Builder
+@AllArgsConstructor(access = AccessLevel.PUBLIC)
+@NoArgsConstructor
 @Entity
 @Table(name = "users")
 public class User {
