@@ -79,3 +79,22 @@
 2025-04-07T05:43:51.439+06:00  INFO 20487 --- [EatSmart API] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
 2025-04-07T05:43:51.474+06:00  INFO 20487 --- [EatSmart API] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
 2025-04-07T05:43:51.524+06:00  INFO 20487 --- [EatSmart API] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-07T14:47:13.512+06:00  INFO 21738 --- [EatSmart API] [main] k.m.eatsmartapi.EatSmartApiApplication   : Starting EatSmartApiApplication using Java 21.0.2 with PID 21738 (/Users/abu/Desktop/work/EatSmart API/qwe/target/classes started by abu in /Users/abu/Desktop/work/EatSmart API/qwe)
+2025-04-07T14:47:13.549+06:00  INFO 21738 --- [EatSmart API] [main] k.m.eatsmartapi.EatSmartApiApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-04-07T14:47:14.669+06:00  INFO 21738 --- [EatSmart API] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-07T14:47:14.766+06:00  INFO 21738 --- [EatSmart API] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 89 ms. Found 4 JPA repository interfaces.
+2025-04-07T14:47:15.339+06:00  INFO 21738 --- [EatSmart API] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
+2025-04-07T14:47:15.355+06:00  INFO 21738 --- [EatSmart API] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-07T14:47:15.356+06:00  INFO 21738 --- [EatSmart API] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-07T14:47:15.403+06:00  INFO 21738 --- [EatSmart API] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-07T14:47:15.403+06:00  INFO 21738 --- [EatSmart API] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1801 ms
+2025-04-07T14:47:16.912+06:00  INFO 21738 --- [EatSmart API] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-07T14:47:16.953+06:00  INFO 21738 --- [EatSmart API] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.0.Final
+2025-04-07T14:47:16.975+06:00  INFO 21738 --- [EatSmart API] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-07T14:47:17.134+06:00  INFO 21738 --- [EatSmart API] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-07T14:47:18.243+06:00  INFO 21738 --- [EatSmart API] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-07T14:47:18.312+06:00  INFO 21738 --- [EatSmart API] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-07T14:47:18.657+06:00  INFO 21738 --- [EatSmart API] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-07T14:47:19.231+06:00  WARN 21738 --- [EatSmart API] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-07T14:47:20.082+06:00  INFO 21738 --- [EatSmart API] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path '/'
+2025-04-07T14:47:20.107+06:00  INFO 21738 --- [EatSmart API] [main] k.m.eatsmartapi.EatSmartApiApplication   : Started EatSmartApiApplication in 7.277 seconds (process running for 8.628)
