@@ -5,15 +5,12 @@ spring:
   application:
     name: EatSmart API
   datasource:
-    url: jdbc:postgresql://localhost:1111/postgres
+    url: jdbc:postgresql://db:5432/postgres
     username: qwe
     password: qwe
     driver-class-name: org.postgresql.Driver
   liquibase:
     change-log: classpath:db/changelog/master.yml
-  h2:
-    console:
-      enabled: false
   jpa:
     hibernate:
       ddl-auto: validate

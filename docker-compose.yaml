@@ -1,0 +1,35 @@
+networks:
+  eat_smart_net:
+
+services:
+  app:
+    container_name: eat_smart_app
+    image: eat_smart:latest
+    restart: unless-stopped
+    ports:
+      - "9090:9090"
+    depends_on:
+      - db
+    volumes:
+      - ./logs:/app/logs
+      - ./config:/app/config
+    networks:
+      - eat_smart_net
+
+  db:
+    container_name: eat_smart_db
+    image: postgres:17
+    restart: always
+    environment:
+      POSTGRES_URL: jdbc:postgresql://db:5432/postgres
+      POSTGRES_USER: qwe
+      POSTGRES_PASSWORD: qwe
+    ports:
+      - "1234:5432"
+    volumes:
+      - ./data_db:/var/lib/postgresql/data
+    logging:
+      options:
+        max-size: 100m
+    networks:
+      - eat_smart_net

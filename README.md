@@ -34,7 +34,7 @@ REST API-сервис для учета дневной нормы калорий
 - Spring Data JPA
 - PostgreSQL
 - JUnit & Mockito
-- Docker(для базы данных)
+- Docker 
 - Lombok
 - Liquibase (для миграций)
 - Swagger (для документации)
@@ -82,12 +82,13 @@ REST API-сервис для учета дневной нормы калорий
 - **Кастомные валидации:** Реализованы отдельные валидаторы, чтобы вынести бизнес-валидации за пределы сервисного слоя.
 - **Начальные данные:** Система заполняется начальными данными через Liquibase для тестирования.
 - **MapStruct**: Интегрирован MapStruct для удобной и быстрой конвертации между сущностями и DTO.
+- **Docker**: Проект и база данных запускаются в Docker-окружении с использованием Docker Compose для удобства развертывания и управления контейнерами.
 
 ### Запуск проекта:
 
 1. Клонируйте репозиторий.
-2. Настройте базу данных PostgreSQL. (Если есть докер пропишите команду: `docker run -d --name eat_smart -p 1111:5432 -e POSTGRES_DB=postgres -e POSTGRES_USER=qwe -e POSTGRES_PASSWORD=qwe postgres:17`)
-3. Запустите приложение через Maven/Gradle.
+2. Построите Docker-образ с помощью следующей команды: `docker build -t eat_smart:latest .`
+3. Запустите приложение в Docker с использованием Docker Compose: `docker compose up -d --build`
 4. Используйте Postman для тестирования API.
 
 ### Postman Collection:
