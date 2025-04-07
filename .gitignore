@@ -34,3 +34,4 @@ build/
 .vscode/
 /.mvn/
 /.jpb/
+/data_db/
